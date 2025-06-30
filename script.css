@@ -1,0 +1,257 @@
+/* Style général du site */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+  /* Arrière-plan avec effet rosé semi-transparent sur l'image */
+body::before {
+  content: "";
+  background: linear-gradient(rgba(255, 248, 252, 0.7), rgba(255, 248, 252, 0.7)), 
+              url('images/macarons.jpg') no-repeat center center/cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+ font-size: 1.3em;     /* Agrandit la taille */
+  font-weight: bold;    /* Rend le texte plus gras */
+  color: #111;          /* (optionnel) couleur plus foncée pour contraste */
+}
+
+a {
+  color: #d97b93;
+  /* rose framboise */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #8b3a62;
+  /* prune plus foncé au survol */
+  text-decoration: underline;
+}
+
+/* Texte lisible et fond rose clair sur toutes les pages */
+body,
+.contact,
+.card {
+  font-size: 1.2em;
+  line-height: 1.8;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff5f7;
+  /* rose pastel */
+  color: #000;
+}
+
+/* Fond d’écran image uniquement pour la page d’accueil */
+.page-accueil {
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Titre principal Pacifico */
+.titre-principal {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.9em;
+  color: #d97b93;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Agrandissement global de l'écriture pour lisibilité */
+h1,
+h2,
+p,
+label,
+input,
+textarea,
+button {
+  font-size: 1.5em;
+}
+
+/* Texte avec fond semi-transparent */
+.texte-avec-fond {
+  background-color: rgba(255, 255, 255, 0.9);    /* blanc transparent */
+  
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Grille des desserts */
+.cartes-desserts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  justify-items: center; /* 💡 centrer les éléments dans les colonnes */
+  overflow: visible; /* Permet aux éléments agrandis de dépasser */
+}
+
+
+  .card {
+  margin-bottom: 60px;
+  background-color: #fff5f7;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.4s ease-in-out, background-color 0.3s ease; /* ✅ transition pour l'effet de zoom */
+  position: relative;   /* ✅ pour l'effet de zoom */
+  z-index: 1;           /* ✅ pour éviter les problèmes de superposition */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 280px; /* ✅ limite largeur trop extrême */
+  display: flex;   /* ✅ pour aligner le contenu verticalement */
+  flex-direction: column;  /* ✅ pour empiler les éléments */
+  justify-content: space-between; /* ✅ espace entre les éléments */
+}
+
+/* Titre des cartes */
+.card:hover {
+  transform: scale(1.03);
+  z-index: 10;        /* Légère expansion au survol */
+  position: relative; /* Nécessaire pour l'effet de zoom */
+}
+
+
+  .contenu-centre {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-commander {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 40px; /* ← Augmenté ici */
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+
+.btn-commander:hover {
+   background-color: #ff4c3b;      /* Plus foncé au survol */
+  transform: scale(1.05);         /* Légère expansion */
+}
+.espace-apres-bouton {
+  height: 40px; /* Tu peux ajuster selon l'espace voulu */
+}
+
+/* Mise en forme de la dernière carte */
+.card.special {
+  max-width: 320px; /* ou 350px si tu veux plus large */
+  font-size: 0.95em; /* texte un peu plus compact */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Mise en forme de la page de contact */
+.titre-contact {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 2.5em;
+  color: #d97b93; /* Pour garder l'identité visuelle */
+}
+
+  /* mise en forme des champs de formulaire */
+  form {
+    background-color: rgba(255, 255, 255, 0.85);      /* fond blanc légèrement transparent */
+    padding: 25px;                                      /* espacement interne */
+    border-radius: 12px;
+    max-width: 600px;                                   /* largeur maximale du formulaire */
+    margin: 40px auto;                                  /* centrer le formulaire */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);            /* effet ombré */
+   
+  }
+
+  label {
+    display: block;
+    /* chaque label sur une nouvelle ligne */
+    font-weight: bold;
+    color: #444;
+
+  }
+
+  /* zone du message */
+  textarea {
+    width: 100%;
+    /* largeur complète */
+    padding: 12px;
+    /* espacement interne */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* bordure grise */
+
+  }
+
+  /* bouton d'envoi */
+  button[type="submit"] {
+    background-color: #d97b93;
+    /* couleur de fond rose */
+    color: white;
+    padding: 10px 20px;
+    /* espacement interne */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* curseur pointeur */
+    font-size: 16px;
+    /* taille de police */
+  }
+
+  /* bouton d'envoi au survol */
+  button[type="submit"]:hover {
+    background-color: #c85b79;
+    /* couleur de fond plus foncé au survol */
+    transform: scale(1.05);
+    /* effet de zoom au survol */
+  }
+
+  /* Responsive design pour les écrans plus petits */
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
+  .card {
+    width: 100%;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff5f7;
+}
+
+.card.special {
+  max-width: 320px; 
+}
+
+.card.special p {
+  hyphens: auto;   /* Permet la césure des mots longs */
+  white-space: normal; /* Permet le retour à la ligne */
+  word-break: break-word; /* Permet de couper les mots trop longs */
+}
